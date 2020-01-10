@@ -1,4 +1,5 @@
 module.exports = {
+  publicPath: "/pwa-share-target-data-revealer/",
   pwa: {
     name: "PWA Share Target Data Revealer",
     themeColor: "#4DBA87", // The Vue color
