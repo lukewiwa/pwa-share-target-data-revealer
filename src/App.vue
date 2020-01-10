@@ -1,29 +1,47 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <div
+    id="app"
+    class="container mx-auto p-4 flex flex-col items-center min-w-full"
+  >
+    <div class="flex-col items-center align-center content-center max-w-2xl">
+      <h1 class="text-2xl font-bold mb-4">PWA Share Target Data Revealer</h1>
+      <div v-if="emptyParams">
+        Install this app as a PWA to your android phone and then share from any
+        other app to PWA Share Target Revealer to show the data transferred
+      </div>
+      <div v-else>
+        <h2 class="text-xl">Parameter Values</h2>
+        <ParamView
+          v-for="(value, key) in params"
+          :key="key"
+          :paramKey="key"
+          :paramValue="value"
+        />
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
+import ParamView from "./components/ParamView.vue";
 
 @Component({
   components: {
-    HelloWorld
+    ParamView
   }
 })
-export default class App extends Vue {}
-</script>
-
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+export default class App extends Vue {
+  params = {};
+  get emptyParams() {
+    return Object.entries(this.params).length === 0;
+  }
+  created() {
+    const currentUrl = new URL(location.href);
+    const params = new URLSearchParams(currentUrl.search);
+    for (const [key, value] of params.entries()) {
+      this.params = { ...this.params, [key]: value };
+    }
+  }
 }
-</style>
+</script>
