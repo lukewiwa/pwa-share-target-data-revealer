@@ -9,7 +9,7 @@ module.exports = {
       start_url: ".",
       display: "standalone",
       share_target: {
-        action: "/",
+        action: "/pwa-share-target-data-revealer/",
         method: "GET",
         params: {
           title: "title",
