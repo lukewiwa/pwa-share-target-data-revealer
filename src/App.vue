@@ -4,17 +4,17 @@
     class="container mx-auto flex flex-col items-stretch align-center max-w-2xl"
   >
     <div
-      class="bg-white flex flex-col items-stretch align-center p-6 m-8 border border-teal-500 rounded-lg"
+      class="bg-white flex flex-col items-stretch align-center p-10 m-8 border border-teal-500 rounded-lg"
     >
-      <h1 class="text-2xl font-bold mt-4 mb-6 self-center text-teal-700">
+      <h1 class="text-2xl font-bold mb-6 self-center text-teal-700">
         PWA Share Target Data Revealer
       </h1>
-      <div class="text-teal-800 my-4" v-if="emptyParams">
+      <div class="text-teal-800" v-if="emptyParams">
         Install this app as a PWA to your android phone and then share from any
         other app to PWA Share Target Revealer to show the data transferred
       </div>
-      <div class="my-4" v-else>
-        <h2 class="text-xl text-teal-700 py-4">Parameter Values</h2>
+      <div v-else>
+        <h2 class="text-xl text-teal-700 my-3">Parameter Values</h2>
         <ParamView
           v-for="(value, key) in params"
           :key="key"
