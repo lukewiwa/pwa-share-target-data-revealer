@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/pwa-share-target-data-revealer/precache-manifest.4e1e75abb47ed998704dd82e5165af00.js"
+  "/pwa-share-target-data-revealer/precache-manifest.5de31e815d1ba6e0830e21228d17b70d.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "pwa-share-target-data-revealer"});
