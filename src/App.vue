@@ -27,25 +27,23 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { defineComponent, computed } from "@vue/composition-api";
 import ParamView from "./components/ParamView.vue";
 
-@Component({
-  components: {
-    ParamView
-  }
-})
-export default class App extends Vue {
-  params = {};
-  get emptyParams() {
-    return Object.entries(this.params).length === 0;
-  }
-  created() {
+export default defineComponent({
+  components: { ParamView },
+  setup() {
     const currentUrl = new URL(location.href);
-    const params = new URLSearchParams(currentUrl.search);
+    let params = new URLSearchParams(currentUrl.search);
     for (const [key, value] of params.entries()) {
-      this.params = { ...this.params, [key]: value };
+      params = { ...params, [key]: value };
     }
+
+    const emptyParams = computed(() => {
+      return Object.entries(params).length === 0;
+    });
+
+    return { params, emptyParams };
   }
-}
+});
 </script>
