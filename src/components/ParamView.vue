@@ -8,11 +8,12 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { defineComponent } from "@vue/composition-api";
 
-@Component
-export default class HelloWorld extends Vue {
-  @Prop() private paramKey!: string;
-  @Prop() private paramValue!: string;
-}
+export default defineComponent({
+  props: { paramKey: String, paramValue: String },
+  setup(props) {
+    return;
+  }
+});
 </script>
