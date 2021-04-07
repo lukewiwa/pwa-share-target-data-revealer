@@ -11,18 +11,20 @@
     },
     // Set *default* container specific settings.json values on container create.
     "settings": {
-        "terminal.integrated.shell.linux": "/bin/zsh"
+        "terminal.integrated.shell.linux": "/bin/zsh",
+        "eslint.lintTask.enable": true,
+        "eslint.format.enable": true
     },
     // Add the IDs of extensions you want installed when the container is created.
     "extensions": [
-		"dbaeumer.vscode-eslint",
-		"streetsidesoftware.code-spell-checker",
-		"eamodio.gitlens",
-		"yzhang.markdown-all-in-one",
-		"bradlc.vscode-tailwindcss",
-		"octref.vetur",
-		"visualstudioexptteam.vscodeintellicode"
-	],
+        "dbaeumer.vscode-eslint",
+        "streetsidesoftware.code-spell-checker",
+        "eamodio.gitlens",
+        "yzhang.markdown-all-in-one",
+        "bradlc.vscode-tailwindcss",
+        "octref.vetur",
+        "visualstudioexptteam.vscodeintellicode"
+    ],
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     "forwardPorts": [
         8080
