@@ -27,7 +27,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "@vue/composition-api";
+import { defineComponent, computed } from "vue";
 import ParamView from "./components/ParamView.vue";
 
 export default defineComponent({
