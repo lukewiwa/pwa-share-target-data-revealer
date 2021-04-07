@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "de927c7924240a42a6e7",
-    "url": "/pwa-share-target-data-revealer/css/app.c941e2ab.css"
+    "revision": "fd9976edb14c9137e5ba",
+    "url": "/pwa-share-target-data-revealer/css/app.43636565.css"
   },
   {
-    "revision": "1af417174b8030d31e7bc468d296eacb",
+    "revision": "1a8119c7c9042505aa53d28101495794",
     "url": "/pwa-share-target-data-revealer/index.html"
   },
   {
-    "revision": "de927c7924240a42a6e7",
-    "url": "/pwa-share-target-data-revealer/js/app.88167242.js"
+    "revision": "fd9976edb14c9137e5ba",
+    "url": "/pwa-share-target-data-revealer/js/app.adff2cdd.js"
   },
   {
-    "revision": "5ed6672eef104f936cdd",
-    "url": "/pwa-share-target-data-revealer/js/chunk-vendors.7a7b63cc.js"
+    "revision": "50eb8e062be4003263bb",
+    "url": "/pwa-share-target-data-revealer/js/chunk-vendors.fb4260d8.js"
   },
   {
     "revision": "1149a4182fe1c113e1ad12a8aae95a91",
