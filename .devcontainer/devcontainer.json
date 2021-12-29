@@ -9,11 +9,14 @@
             "VARIANT": "14"
         }
     },
+    "containerEnv": {
+        "SHELL": "/usr/bin/zsh"
+    },
     // Set *default* container specific settings.json values on container create.
     "settings": {
-        "terminal.integrated.shell.linux": "/bin/zsh",
         "eslint.lintTask.enable": true,
-        "eslint.format.enable": true
+        "eslint.format.enable": true,
+        "editor.formatOnSave": true
     },
     // Add the IDs of extensions you want installed when the container is created.
     "extensions": [
@@ -30,11 +33,12 @@
         8080
     ],
     // Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "npm install",
+    "postCreateCommand": "npm install && npm --prefix infra install",
     // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
     "remoteUser": "node",
     "mounts": [
         "source=pwa-npm-cache,target=/workspace/pwa-share-target-data-revealer/node_modules,type=volume",
+        "source=pwa-infra-npm-cache,target=/workspace/pwa-share-target-data-revealer/infra/node_modules,type=volume",
         "source=pwa-str-vscode-etx,target=/home/node/.vscode-server/extensions,type=volume",
     ]
 }
