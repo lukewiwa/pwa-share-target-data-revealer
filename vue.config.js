@@ -1,5 +1,4 @@
 module.exports = {
-  publicPath: "/pwa-share-target-data-revealer/",
   pwa: {
     name: "PWA Share Target Data Revealer",
     themeColor: "#4FD1C5",
@@ -10,7 +9,7 @@ module.exports = {
       start_url: ".",
       display: "standalone",
       share_target: {
-        action: "/pwa-share-target-data-revealer/",
+        action: "/",
         method: "GET",
         params: {
           title: "title",

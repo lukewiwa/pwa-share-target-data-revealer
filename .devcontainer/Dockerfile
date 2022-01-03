@@ -7,10 +7,11 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
 
 ARG USERNAME="node"
 RUN mkdir -p /home/$USERNAME/.vscode-server/extensions \
-    /workspace/pwa-share-target-data-revealer/node_modules \
+    /workspaces/pwa-share-target-data-revealer/node_modules \
+    /workspaces/pwa-share-target-data-revealer/infra/node_modules \
     && chown -R $USERNAME \
     /home/$USERNAME/.vscode-server \
-    /workspace
+    /workspaces
 
 
 # [Optional] Uncomment this section to install additional OS packages.
