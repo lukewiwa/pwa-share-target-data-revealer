@@ -28,4 +28,4 @@ jobs:
         run: npm ci
 
       - name: deploy
-        run: npm run build && npm --prefix=infra run synth && npm --prefix=infra run deploy
+        run: npm --prefix=infra run deploy
