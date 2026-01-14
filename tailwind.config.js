@@ -1,17 +1,14 @@
-const colors = require("tailwindcss/colors");
+import colors from "tailwindcss/colors";
 
-module.exports = {
-  purge: { content: ["./public/**/*.html", "./src/**/*.vue"] },
-  darkMode: false, // or 'media' or 'class'
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        teal: colors.teal
-      }
-    }
+        teal: colors.teal,
+      },
+    },
   },
-  variants: {
-    extend: {}
-  },
-  plugins: []
+  plugins: [],
 };
