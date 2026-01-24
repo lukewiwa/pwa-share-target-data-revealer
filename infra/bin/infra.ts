@@ -18,11 +18,12 @@ const domainName = `${subDomain}.${fullyQualifiedDomain}`;
 
 // OIDC stack - Creates GitHub OIDC provider and IAM role for GitHub Actions
 // This should be deployed first, before other stacks
+// Configured to only allow deployments from semver tags (v*.*.*)
 new OidcStack(app, "PstrOidcStack", {
   env,
   githubOrg: "lukewiwa",
   githubRepo: "pwa-share-target-data-revealer",
-  githubBranches: ["master"],
+  githubTagPatterns: ["v*"],
 });
 
 // DNS stack - Route53 is global, but we create it in the primary region

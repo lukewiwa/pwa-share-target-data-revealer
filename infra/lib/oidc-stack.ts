@@ -14,10 +14,11 @@ export interface OidcStackProps extends StackProps {
   readonly githubRepo: string;
 
   /**
-   * GitHub branches that can assume the role
-   * @default - ["master"]
+   * GitHub tag patterns that can assume the role
+   * Supports wildcards (e.g., ["v*"] for all tags starting with 'v')
+   * @default - ["v*"]
    */
-  readonly githubBranches?: string[];
+  readonly githubTagPatterns?: string[];
 }
 
 export class OidcStack extends Stack {
@@ -27,7 +28,7 @@ export class OidcStack extends Stack {
     super(scope, id, props);
 
     const { githubOrg, githubRepo } = props;
-    const githubBranches = props.githubBranches ?? ["master"];
+    const githubTagPatterns = props.githubTagPatterns ?? ["v*"];
 
     // Create the GitHub OIDC provider
     const githubProvider = new iam.OpenIdConnectProvider(
@@ -49,9 +50,9 @@ export class OidcStack extends Stack {
             "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
           },
           StringLike: {
-            "token.actions.githubusercontent.com:sub": githubBranches.map(
-              (branch) =>
-                `repo:${githubOrg}/${githubRepo}:ref:refs/heads/${branch}`
+            "token.actions.githubusercontent.com:sub": githubTagPatterns.map(
+              (tagPattern) =>
+                `repo:${githubOrg}/${githubRepo}:ref:refs/tags/${tagPattern}`
             ),
           },
         },
