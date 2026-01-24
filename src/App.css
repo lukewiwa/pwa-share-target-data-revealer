@@ -1,0 +1,6 @@
+.install-images {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, 350px);
+  justify-content: center;
+}
