@@ -1,44 +1,25 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.166.0/containers/javascript-node
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-    "name": "Node.js",
-    "build": {
-        "dockerfile": "Dockerfile",
-        // Update 'VARIANT' to pick a Node version: 10, 12, 14
-        "args": {
-            "VARIANT": "14"
-        }
-    },
-    "containerEnv": {
-        "SHELL": "/usr/bin/zsh"
-    },
-    // Set *default* container specific settings.json values on container create.
-    "settings": {
-        "eslint.lintTask.enable": true,
-        "eslint.format.enable": true,
-        "editor.formatOnSave": true
-    },
-    // Add the IDs of extensions you want installed when the container is created.
-    "extensions": [
-        "dbaeumer.vscode-eslint",
-        "streetsidesoftware.code-spell-checker",
-        "eamodio.gitlens",
-        "yzhang.markdown-all-in-one",
-        "bradlc.vscode-tailwindcss",
-        "octref.vetur",
-        "visualstudioexptteam.vscodeintellicode"
-    ],
-    // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    "forwardPorts": [
-        8080
-    ],
-    // Use 'postCreateCommand' to run commands after the container is created.
-    "postCreateCommand": "npm install && npm --prefix infra install",
-    // Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-    "remoteUser": "node",
-    "mounts": [
-        "source=pwa-npm-cache,target=/workspace/pwa-share-target-data-revealer/node_modules,type=volume",
-        "source=pwa-infra-npm-cache,target=/workspace/pwa-share-target-data-revealer/infra/node_modules,type=volume",
-        "source=pwa-str-vscode-etx,target=/home/node/.vscode-server/extensions,type=volume",
-    ]
+	"name": "PWA Share Target Revealer",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:24-bookworm",
+	"features": {
+		"ghcr.io/devcontainers/features/aws-cli:1": {}
+	}
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "yarn install",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }
